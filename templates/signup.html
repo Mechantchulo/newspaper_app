@@ -1,0 +1,17 @@
+{% extends 'base.html' %}  {# Extending the base template #}
+{% load crispy_forms_tags %}  {# Loading crispy_forms template tags #}
+
+{% block title %}
+    Sign Up  {# Setting the page title #}
+{% endblock %}
+
+{% block content %}
+    <h2>Sign Up</h2>  {# Header for the sign up page #}
+    
+    <form method="post">
+        {% csrf_token %}  {# CSRF protection token #}
+        {{ form|crispy }}  {# Rendering the form using crispy forms for styling #}
+        
+        <button class="btn btn-success" type="submit">Sign Up</button>  {# Submit button with Bootstrap classes for styling #}
+    </form>
+{% endblock %}
